@@ -40,10 +40,10 @@ def run_eda_app():
 
     # 상관계수를 화면에 보여주도록 만듭니다. 
 
-    # if st.button("Heatmap보기"):
-        
-    #     fig2 = sns.heatmap(diabetes_df.corr())
-    #     st.pyplot(fig2)
+    if st.button("Heatmap보기"):
+        fig2 = plt.figure()
+        sns.heatmap(diabetes_df.corr(), annot=True , vmax=1 , vmin = -1 , square=2)
+        st.pyplot(fig2)
 
     corr_columns = diabetes_df.columns[diabetes_df.dtypes != object]
     selected_columns = st.multiselect('상관계수 컬럼 선택', corr_columns)
