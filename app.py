@@ -22,15 +22,16 @@ from ml_app import run_ml_app
 
 
 def main():
-    st.title('당뇨병 예측 서비스입니다. 왼쪽 사이드바를 이용하여 메뉴를 선택하세요.')
+    st.title('당뇨병 예측 서비스입니다.')
+    st.write("왼쪽 사이드바를 이용하여 메뉴를 선택하세요.")
 
     # 사이드바 메뉴
     menu= ['Home','EDA', 'ML']
     choice = st.sidebar.selectbox('Menu', menu)
 
     if choice == 'Home':
-        st.write('이 앱은 고객데이터와 자동차 구매 데이터에 대한 내용입니다. 해당 고객의 정보를 입력하면, 얼마정도의 차를 구매할 수 있는지 예측하는 앱입니다.')
-
+        st.write('이 앱은 Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,bmi,Dpf,Age의 정보를 입력 받습니다.')
+        st.write('이 앱은 Random Forest를 이용한 예측 모델입니다. 기초 자료로만 활용해주세요.')
         st.write('왼쪽의 사이드바에서 선택하세요.')
         st.image('data/nurse.jpg')
 
