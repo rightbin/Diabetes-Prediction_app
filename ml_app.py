@@ -13,6 +13,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.callbacks import CSVLogger
 import pickle 
 import joblib
+from sklearn.ensemble import RandomForestClassifier
 
 
 def run_ml_app():
@@ -38,7 +39,7 @@ def run_ml_app():
     # COutcome : class variable (0 or 1) 268 of 768 are 1, the others are 0
 
 
-    Pregnancies = st.slider("Pregnancies",1,17)
+    Pregnancies = st.slider("Pregnancies",0,17)
     st.write('Pregnancies는 임신횟수입니다.')
     st.write("임신 횟수는 {} 번 입니다.".format(Pregnancies))
 
@@ -73,8 +74,9 @@ def run_ml_app():
 
     #예측한다.
 
-    model = pickle.load(open("data/pima.pickle.dat", "rb"))
-        
+    # model = pickle.load(open("data/pima.pickle.dat", "rb"))
+    
+    model = joblib.load('data/best_model.pkl')   
     new_data = np.array([Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,bmi,Dpf,Age])
 
     #new_data = np.array([0, 0.36  , 0.875 , 0.09547739, 0.48979592])

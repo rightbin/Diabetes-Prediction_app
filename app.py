@@ -16,6 +16,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.callbacks import CSVLogger
 import pickle
 import joblib
+from sklearn.ensemble import RandomForestClassifier
 
 from eda_app import run_eda_app
 from ml_app import run_ml_app

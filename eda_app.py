@@ -17,6 +17,9 @@ from keras.layers import Dense
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.callbacks import CSVLogger
 import pickle
+from sklearn.ensemble import RandomForestClassifier
+import joblib
+
 
 def run_eda_app():
     st.subheader('EDA 화면입니다.')
